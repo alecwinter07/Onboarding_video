@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL Onboarding Video Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        
+        .welcome-section {
+            background: #f0f4ff;
+            border-left: 4px solid #4a90e2;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+        
+        .welcome-section p {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        
+        .welcome-section strong {
+            color: #4a90e2;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 40px;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-number {
+            display: inline-block;
+            background: #4a90e2;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-description {
+            font-size: 1.05em;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .note-section {
+            background: #fff8e6;
+            border-left: 4px solid #ffa500;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        .note-section strong {
+            color: #e67e22;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+            
+            .section h2 {
+                font-size: 1.4em;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .section-number {
+                display: block;
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LEVEL Onboarding Video Guide</h1>
+        
+        <div class="welcome-section">
+            <p>💡 <strong>Welcome!</strong> These short videos will walk you through everything you need to know to get started. Watch them in order or jump to the topic you need help with.</p>
+            <p>Each video takes 2-5 minutes. You can pause and come back anytime.</p>
+        </div>
+        
+        <!-- Section 01 -->
+        <div class="section">
+            <span class="section-number">01</span>
+            <h2>Accessing Your GHL Account</h2>
+            <p class="section-description">Learn how to find your onboarding email and log into your High-level account for the first time.</p>
+            
+            <div class="video-container">
+                <video controls>
+                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/level_new_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="note-section">
+                <p>Now that you understand how to complete the form, you can go ahead and fill out your onboarding form. Once you have access to your GHL account, you can watch the remaining onboarding videos directly from your dashboard to better understand the platform and get familiar with the rest of the onboarding process.</p>
+            </div>
+        </div>
+        
+        <!-- Section 02 -->
+        <div class="section">
+            <span class="section-number">02</span>
+            <h2>Conversation</h2>
+            <p class="section-description">In this video, you will learn how to use the Conversations tab to communicate with your leads, as well as how to send SMS and emails to your leads using the Conversations feature in GHL.</p>
+            
+            <div class="video-container">
+                <video controls>
+                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/LEVEL_NEW_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+        <!-- Section 03 -->
+        <div class="section">
+            <span class="section-number">03</span>
+            <h2>Contacts</h2>
+            <p class="section-description">In the Contacts section, you can see all the leads that have been generated from your ad campaigns. You can also see the date and time when each lead was created in your system.</p>
+            
+            <div class="video-container">
+                <video controls>
+                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/level_new_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+        <!-- Section 04 -->
+        <div class="section">
+            <span class="section-number">04</span>
+            <h2>Opportunities</h2>
+            <p class="section-description">One of the most important features for you is the Pipeline, where all of your leads and opportunities are organized in one place. You can move each opportunity (lead) from one stage to another based on its progress.</p>
+            
+            <p class="section-description">All of your opportunities will be displayed in the Pipeline, making it easy to track where each lead is in the sales process. You can think of the Pipeline as a file that keeps all the important information about your leads organized in one place.</p>
+            
+            <div class="video-container">
+                <video controls>
+                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/LEVEL_New_4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="note-section">
+                <p>You don't need to respond to your leads yourself. <strong>Hunter</strong>, a Claude-powered AI agent, will communicate with your leads, follow up with them, and nurture them throughout the process.</p>
+                <p style="margin-top: 12px;">You only need to step in when a lead is interested in scheduling a meeting with you or when there's something that requires your personal response.</p>
+                <p style="margin-top: 12px;"><strong>BLITZ</strong>, our AI bot, will also send you a summary of the conversation with each client, so you have the necessary background and context before speaking with them.</p>
+            </div>
+        </div>
+        
+        <!-- Section 05 -->
+        <div class="section">
+            <span class="section-number">05</span>
+            <h2>Sites</h2>
+            <p class="section-description">You can view your landing pages and website here. You can also check whether all the information you provided in your onboarding form has been correctly populated on your landing page.</p>
+            
+            <div class="video-container">
+                <video controls>
+                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/LEVEL_5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+        <!-- Section 06 -->
+        <div class="section">
+            <span class="section-number">06</span>
+            <h2>Phone Number</h2>
+            <p class="section-description">In this section, you can see the phone number you will use within the LEVEL system. Every realtor will have their own dedicated GHL number, which will be used for sending SMS messages and making calls.</p>
+            
+            <div class="video-container">
+                <video controls>
+                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/level_6.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
