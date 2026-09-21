@@ -1,259 +1,951 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>LEVEL Onboarding Video Guide</title>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        :root {
+            --blue: #2563eb;
+            --blue-dark: #1d4ed8;
+            --blue-light: #eff6ff;
+            --blue-soft: #dbeafe;
+            --navy: #0f172a;
+            --text: #334155;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --white: #ffffff;
+            --background: #f8fafc;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    #dbeafe 0,
+                    transparent 35%
+                ),
+                linear-gradient(
+                    180deg,
+                    #f8fbff 0%,
+                    #f8fafc 100%
+                );
+
+            color: var(--text);
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
         }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: white;
-            min-height: 100vh;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            color: #1a1a1a;
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f3fae 0%,
+                    #2563eb 55%,
+                    #3b82f6 100%
+                );
+
+            color: white;
+            padding: 70px 20px 100px;
             text-align: center;
         }
-        
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            top: -220px;
+            left: -120px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+            right: -200px;
+            bottom: -350px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            color: rgba(255,255,255,0.88);
+            font-size: 1.1rem;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 1050px;
+            margin: -55px auto 0;
+            padding: 0 20px 80px;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* =========================
+           WELCOME CARD
+        ========================= */
+
         .welcome-section {
-            background: #f0f4ff;
-            border-left: 4px solid #4a90e2;
-            padding: 20px;
-            margin-bottom: 40px;
-            border-radius: 4px;
-        }
-        
-        .welcome-section p {
-            margin-bottom: 10px;
-            font-size: 1em;
-        }
-        
-        .welcome-section strong {
-            color: #4a90e2;
-        }
-        
-        .section {
-            margin-bottom: 50px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 40px;
-        }
-        
-        .section:last-child {
-            border-bottom: none;
-        }
-        
-        .section-number {
-            display: inline-block;
-            background: #4a90e2;
-            color: white;
-            padding: 4px 12px;
+            background: rgba(255,255,255,0.95);
+            border: 1px solid var(--border);
             border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 600;
-            margin-bottom: 10px;
+            padding: 30px;
+
+            box-shadow:
+                0 20px 50px rgba(15,23,42,0.10);
+
+            margin-bottom: 40px;
         }
-        
-        .section h2 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            color: #1a1a1a;
+
+        .welcome-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 16px;
+        }
+
+        .welcome-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+
             display: flex;
             align-items: center;
-            gap: 15px;
+            justify-content: center;
+
+            background: var(--blue-light);
+            color: var(--blue);
+
+            border-radius: 14px;
+            font-size: 23px;
         }
-        
+
+        .welcome-section h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .welcome-section p {
+            color: var(--muted);
+            font-size: 0.98rem;
+        }
+
+        .welcome-section strong {
+            color: var(--blue);
+        }
+
+        .time-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            margin-top: 15px;
+            padding: 7px 12px;
+
+            border-radius: 8px;
+            background: var(--blue-light);
+            color: var(--blue);
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           VIDEO GRID
+        ========================= */
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        /* =========================
+           VIDEO CARD
+        ========================= */
+
+        .video-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(15,23,42,0.06);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 18px 40px rgba(37,99,235,0.13);
+
+            border-color: #bfdbfe;
+        }
+
+        /* =========================
+           CARD HEADER
+        ========================= */
+
+        .card-header {
+            padding: 24px 24px 18px;
+        }
+
+        .step-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 13px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--blue-dark)
+                );
+
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+
+            box-shadow:
+                0 6px 15px rgba(37,99,235,0.25);
+        }
+
+        .step-label {
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .video-card h2 {
+            font-size: 1.35rem;
+            line-height: 1.3;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
         .section-description {
-            font-size: 1.05em;
-            color: #555;
-            margin-bottom: 25px;
-            line-height: 1.7;
+            color: var(--muted);
+            font-size: 0.93rem;
+            line-height: 1.65;
         }
-        
+
+        /* =========================
+           VIDEO
+        ========================= */
+
+        .video-wrapper {
+            padding: 0 18px 18px;
+        }
+
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%;
-            height: 0;
+            aspect-ratio: 16 / 9;
+
             overflow: hidden;
-            background: #000;
-            border-radius: 8px;
-            margin: 30px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #172554
+                );
+
+            border-radius: 14px;
+
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255,0.08),
+                0 8px 20px rgba(15,23,42,0.12);
         }
-        
+
         .video-container video {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
+
             width: 100%;
             height: 100%;
+
+            object-fit: cover;
         }
-        
+
+        /* =========================
+           VIDEO PLACEHOLDER
+        ========================= */
+
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(37,99,235,0.35),
+                    rgba(15,23,42,0.95)
+                );
+        }
+
+        .play-icon {
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.95);
+            color: var(--blue);
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .placeholder-text {
+            font-size: 13px;
+            color: rgba(255,255,255,0.75);
+        }
+
+        /* =========================
+           NOTE
+        ========================= */
+
         .note-section {
-            background: #fff8e6;
-            border-left: 4px solid #ffa500;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 4px;
-            font-size: 0.95em;
-            line-height: 1.7;
+            margin: 0 24px 24px;
+
+            padding: 18px;
+
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-left: 4px solid var(--blue);
+
+            border-radius: 12px;
+
+            color: #475569;
+            font-size: 0.9rem;
+            line-height: 1.65;
         }
-        
+
         .note-section strong {
-            color: #e67e22;
+            color: var(--blue-dark);
         }
-        
-        .highlight {
-            background: #fff3cd;
-            padding: 2px 6px;
-            border-radius: 3px;
+
+        .note-title {
+            display: block;
+            color: var(--blue-dark);
+            font-weight: 800;
+            margin-bottom: 6px;
         }
-        
-        @media (max-width: 768px) {
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px 10px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer strong {
+            color: var(--blue);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                padding: 55px 20px 90px;
+            }
+
             .container {
-                padding: 20px 15px;
+                margin-top: -45px;
+                padding-left: 15px;
+                padding-right: 15px;
             }
-            
-            h1 {
-                font-size: 1.8em;
-                margin-bottom: 20px;
+
+            .video-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .section h2 {
-                font-size: 1.4em;
-                flex-direction: column;
-                align-items: flex-start;
+
+            .welcome-section {
+                padding: 22px;
             }
-            
-            .section-number {
-                display: block;
-                width: fit-content;
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .hero {
+                padding: 45px 18px 80px;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .welcome-top {
+                gap: 12px;
+            }
+
+            .welcome-icon {
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+            }
+
+            .card-header {
+                padding: 20px 18px 15px;
+            }
+
+            .video-wrapper {
+                padding: 0 12px 12px;
+            }
+
+            .note-section {
+                margin: 0 18px 18px;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>LEVEL Onboarding Video Guide</h1>
-        
-        <div class="welcome-section">
-            <p>💡 <strong>Welcome!</strong> These short videos will walk you through everything you need to know to get started. Watch them in order or jump to the topic you need help with.</p>
-            <p>Each video takes 2-5 minutes. You can pause and come back anytime.</p>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="logo-badge">
+            LEVEL • ONBOARDING
         </div>
-        
-        <!-- Section 01 -->
-        <div class="section">
-            <span class="section-number">01</span>
-            <h2>Accessing Your GHL Account</h2>
-            <p class="section-description">Learn how to find your onboarding email and log into your High-level account for the first time.</p>
-            
-            <div class="video-container">
-                <video controls>
-                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/level_new_1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-            <div class="note-section">
-                <p>Now that you understand how to complete the form, you can go ahead and fill out your onboarding form. Once you have access to your GHL account, you can watch the remaining onboarding videos directly from your dashboard to better understand the platform and get familiar with the rest of the onboarding process.</p>
-            </div>
-        </div>
-        
-        <!-- Section 02 -->
-        <div class="section">
-            <span class="section-number">02</span>
-            <h2>Conversation</h2>
-            <p class="section-description">In this video, you will learn how to use the Conversations tab to communicate with your leads, as well as how to send SMS and emails to your leads using the Conversations feature in GHL.</p>
-            
-            <div class="video-container">
-                <video controls>
-                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/LEVEL_NEW_2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-        
-        <!-- Section 03 -->
-        <div class="section">
-            <span class="section-number">03</span>
-            <h2>Contacts</h2>
-            <p class="section-description">In the Contacts section, you can see all the leads that have been generated from your ad campaigns. You can also see the date and time when each lead was created in your system.</p>
-            
-            <div class="video-container">
-                <video controls>
-                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/level_new_3.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-        
-        <!-- Section 04 -->
-        <div class="section">
-            <span class="section-number">04</span>
-            <h2>Opportunities</h2>
-            <p class="section-description">One of the most important features for you is the Pipeline, where all of your leads and opportunities are organized in one place. You can move each opportunity (lead) from one stage to another based on its progress.</p>
-            
-            <p class="section-description">All of your opportunities will be displayed in the Pipeline, making it easy to track where each lead is in the sales process. You can think of the Pipeline as a file that keeps all the important information about your leads organized in one place.</p>
-            
-            <div class="video-container">
-                <video controls>
-                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/LEVEL_New_4.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-            <div class="note-section">
-                <p>You don't need to respond to your leads yourself. <strong>Hunter</strong>, a Claude-powered AI agent, will communicate with your leads, follow up with them, and nurture them throughout the process.</p>
-                <p style="margin-top: 12px;">You only need to step in when a lead is interested in scheduling a meeting with you or when there's something that requires your personal response.</p>
-                <p style="margin-top: 12px;"><strong>BLITZ</strong>, our AI bot, will also send you a summary of the conversation with each client, so you have the necessary background and context before speaking with them.</p>
-            </div>
-        </div>
-        
-        <!-- Section 05 -->
-        <div class="section">
-            <span class="section-number">05</span>
-            <h2>Sites</h2>
-            <p class="section-description">You can view your landing pages and website here. You can also check whether all the information you provided in your onboarding form has been correctly populated on your landing page.</p>
-            
-            <div class="video-container">
-                <video controls>
-                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/LEVEL_5.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-        
-        <!-- Section 06 -->
-        <div class="section">
-            <span class="section-number">06</span>
-            <h2>Phone Number</h2>
-            <p class="section-description">In this section, you can see the phone number you will use within the LEVEL system. Every realtor will have their own dedicated GHL number, which will be used for sending SMS messages and making calls.</p>
-            
-            <div class="video-container">
-                <video controls>
-                    <source src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/level_6.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
+
+        <h1>
+            Your LEVEL<br>
+            Video Guide
+        </h1>
+
+        <p>
+            Everything you need to understand your LEVEL system,
+            manage your leads, and get the most out of your dashboard.
+        </p>
+
     </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="container">
+
+    <!-- Welcome -->
+
+    <div class="welcome-section">
+
+        <div class="welcome-top">
+
+            <div class="welcome-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h3>
+                    Welcome to LEVEL
+                </h3>
+
+                <p>
+                    These short videos will walk you through everything
+                    you need to know to get started. Watch them in order
+                    or jump directly to the topic you need.
+                </p>
+
+                <div class="time-badge">
+                    ⏱ 2–5 minutes per video
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         VIDEO GRID
+    ========================= -->
+
+    <div class="video-grid">
+
+
+        <!-- VIDEO 01 -->
+
+        <div class="video-card">
+
+            <div class="card-header">
+
+                <div class="step-row">
+
+                    <span class="section-number">
+                        01
+                    </span>
+
+                    <span class="step-label">
+                        Getting Started
+                    </span>
+
+                </div>
+
+                <h2>
+                    Accessing Your GHL Account
+                </h2>
+
+                <p class="section-description">
+                    Learn how to find your onboarding email and log
+                    into your HighLevel account for the first time.
+                </p>
+
+            </div>
+
+            <div class="video-wrapper">
+
+                <div class="video-container">
+
+                    <video controls preload="metadata">
+                        <source
+                            src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/level_new_1.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                </div>
+
+            </div>
+
+            <div class="note-section">
+
+                <span class="note-title">
+                    Next Step
+                </span>
+
+                Once you understand the onboarding process,
+                complete your onboarding form and access your
+                GHL account. The remaining videos will help you
+                become familiar with the platform.
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 02 -->
+
+        <div class="video-card">
+
+            <div class="card-header">
+
+                <div class="step-row">
+
+                    <span class="section-number">
+                        02
+                    </span>
+
+                    <span class="step-label">
+                        Communication
+                    </span>
+
+                </div>
+
+                <h2>
+                    Conversations
+                </h2>
+
+                <p class="section-description">
+                    Learn how to use the Conversations tab to
+                    communicate with your leads and send SMS
+                    messages and emails through GHL.
+                </p>
+
+            </div>
+
+            <div class="video-wrapper">
+
+                <div class="video-container">
+
+                    <video controls preload="metadata">
+                        <source
+                            src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/LEVEL_NEW_2.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 03 -->
+
+        <div class="video-card">
+
+            <div class="card-header">
+
+                <div class="step-row">
+
+                    <span class="section-number">
+                        03
+                    </span>
+
+                    <span class="step-label">
+                        Lead Management
+                    </span>
+
+                </div>
+
+                <h2>
+                    Contacts
+                </h2>
+
+                <p class="section-description">
+                    Learn how to view your leads and understand
+                    when they were created and entered into your
+                    LEVEL system.
+                </p>
+
+            </div>
+
+            <div class="video-wrapper">
+
+                <div class="video-container">
+
+                    <video controls preload="metadata">
+                        <source
+                            src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/level_new_3.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 04 -->
+
+        <div class="video-card">
+
+            <div class="card-header">
+
+                <div class="step-row">
+
+                    <span class="section-number">
+                        04
+                    </span>
+
+                    <span class="step-label">
+                        Sales Pipeline
+                    </span>
+
+                </div>
+
+                <h2>
+                    Opportunities
+                </h2>
+
+                <p class="section-description">
+                    Learn how your leads and opportunities are
+                    organized inside the Pipeline and how each
+                    lead progresses through the sales process.
+                </p>
+
+            </div>
+
+            <div class="video-wrapper">
+
+                <div class="video-container">
+
+                    <video controls preload="metadata">
+                        <source
+                            src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/LEVEL_New_4.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                </div>
+
+            </div>
+
+            <div class="note-section">
+
+                <span class="note-title">
+                    Your AI Assistant
+                </span>
+
+                You don't need to respond to your leads yourself.
+                <strong>Hunter</strong>, a Claude-powered AI agent,
+                communicates with leads, follows up, and nurtures
+                them throughout the process.
+
+                <br><br>
+
+                <strong>BLITZ</strong> also provides you with a
+                conversation summary when a lead requires your
+                attention.
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 05 -->
+
+        <div class="video-card">
+
+            <div class="card-header">
+
+                <div class="step-row">
+
+                    <span class="section-number">
+                        05
+                    </span>
+
+                    <span class="step-label">
+                        Website
+                    </span>
+
+                </div>
+
+                <h2>
+                    Sites
+                </h2>
+
+                <p class="section-description">
+                    View your landing pages and website and verify
+                    that the information from your onboarding form
+                    has been correctly populated.
+                </p>
+
+            </div>
+
+            <div class="video-wrapper">
+
+                <div class="video-container">
+
+                    <video controls preload="metadata">
+                        <source
+                            src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/LEVEL_5.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 06 -->
+
+        <div class="video-card">
+
+            <div class="card-header">
+
+                <div class="step-row">
+
+                    <span class="section-number">
+                        06
+                    </span>
+
+                    <span class="step-label">
+                        Phone System
+                    </span>
+
+                </div>
+
+                <h2>
+                    Phone Number
+                </h2>
+
+                <p class="section-description">
+                    Learn about the dedicated phone number used
+                    within the LEVEL system for SMS communication
+                    and calls.
+                </p>
+
+            </div>
+
+            <div class="video-wrapper">
+
+                <div class="video-container">
+
+                    <video controls preload="metadata">
+                        <source
+                            src="https://raw.githubusercontent.com/YOUR_USERNAME/level-onboarding-guide/main/videos/level_6.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <div class="footer">
+
+        <p>
+            <strong>LEVEL</strong> — Your complete lead generation system.
+        </p>
+
+        <p style="margin-top:6px;">
+            Watch • Learn • Grow
+        </p>
+
+    </div>
+
+</div>
+
 </body>
 </html>
+```
